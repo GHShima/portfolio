@@ -7,9 +7,13 @@ interface ContainerProps {
 export const Container = styled.div<ContainerProps>`
   padding: 30px 0;
   background: #262626;
+  border-style: solid;
+  border-color: #000000;
+  border-width: 0.1px 0 1px 0;
+
   header {
-    width: 100%;
     margin: 0 auto;
+    width: 100%;
     padding: ${({ size }) =>
       size === 'small' ? '10px 60px ' : '0 20px 150px'};
     display: flex;
@@ -18,10 +22,10 @@ export const Container = styled.div<ContainerProps>`
     div {
       color: #f0f2f5;
       h1 {
-        font-size: 26px;
+        font-size: 2rem;
       }
       p {
-        font-size: 20px;
+        font-size: 1.5rem;
       }
     }
     nav {
@@ -32,7 +36,7 @@ export const Container = styled.div<ContainerProps>`
         transition: opacity 0.2s;
 
         & + a {
-          margin-left: 32px;
+          margin-left: 3.2rem;
         }
         &:hover {
           opacity: 0.6;

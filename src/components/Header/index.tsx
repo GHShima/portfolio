@@ -13,6 +13,7 @@ const Header: React.FC<HeaderProps> = ({ size = 'large' }: HeaderProps) => (
         <h1>Guilherme Shimabukuro</h1>
         <p>Web-developer</p>
       </div>
+
       <nav>
         <Link to="/">Dashboard</Link>
         <Link to="/about">Sobre</Link>
