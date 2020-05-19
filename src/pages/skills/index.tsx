@@ -3,6 +3,7 @@ import { CircularProgressbar } from 'react-circular-progressbar';
 import VisibilitySensor from 'react-visibility-sensor';
 import 'react-circular-progressbar/dist/styles.css';
 import { Container } from './styles';
+import Footer from '../../components/Footer';
 
 const Skills: React.FC = () => {
   let value = 0;
@@ -120,7 +121,7 @@ const Skills: React.FC = () => {
               </VisibilitySensor>
             </section>
             <section>
-              <p>NodeJS</p>
+              <p>Node.js</p>
               <VisibilitySensor partialVisibility>
                 {({ isVisible }) => {
                   if (isVisible) {
@@ -139,6 +140,7 @@ const Skills: React.FC = () => {
           </div>
         </div>
       </Container>
+      <Footer size="small" />
     </>
   );
 };

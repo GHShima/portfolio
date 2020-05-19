@@ -32,7 +32,7 @@ export const Container = styled.div<ContainerProps>`
       a {
         color: #f0f2f5;
         text-decoration: none;
-        font-size: 20px;
+        font-size: 1.3rem;
         transition: opacity 0.2s;
 
         & + a {
@@ -43,5 +43,67 @@ export const Container = styled.div<ContainerProps>`
         }
       }
     }
+    button {
+      background: none;
+      border: none;
+    }
+    svg {
+      color: #f0f2f5;
+    }
+    .side-nav {
+      width: 0;
+      height: 100%;
+      position: fixed;
+      z-index: 1;
+      top: 0;
+      left: 0;
+      background-color: #262626;
+      overflow-x: hidden;
+      transition: 0.5s;
+      padding-top: 60px;
+    }
+    .side-nav a {
+      padding: 8px 8px 8px 32px;
+      text-decoration: none;
+      font-size: 2rem;
+      display: block;
+      transition: 0.3s;
+    }
+    .side-nav a:hover {
+      opacity: 0.6;
+    }
+    .side-nav .close-btn {
+      position: absolute;
+      top: 0;
+      right: 25px;
+      font-size: 36px;
+      margin-left: 50px;
+    }
+  }
+  @media screen and (min-width: 320px) {
+    .top-nav {
+      display: none;
+    }
+    .button-side-nav {
+      display: initial;
+    }
+  }
+  @media screen and (min-width: 375px) {
+  }
+  @media screen and (min-width: 425px) {
+  }
+  @media screen and (min-width: 768px) {
+  }
+  @media screen and (min-width: 1024px) {
+    .top-nav {
+      display: initial;
+    }
+    .button-side-nav {
+      display: none;
+    }
+  }
+  @media screen and (min-width: 1440px) {
+  }
+  @media screen and (min-width: 2560px) {
   }
 `;

@@ -17,9 +17,12 @@ body {
   -webkit-font-smoothing: antialiased;
 }
 
-body, input, button{
+body{
   color:#f0f2f5;
   font:1.6rem Roboto,sans-serif;
+}
+input, button, textarea{
+  font:1.2rem Roboto,sans-serif;
 }
 .header {
   background: #2b2b2b;
@@ -29,6 +32,27 @@ body, input, button{
 .content {
   max-width: 960px;
   margin: 0 auto;
-}
+  margin-bottom:100px;
 
+}
+h2 {
+  text-align: center;
+  font-size: 2rem;
+}
+h3 {
+  margin-top: 10px;
+  font-size: 1.7rem;
+  text-align: center;
+}
+@media screen and (min-width: 2560px){
+  #root{
+    font-size: 80%;
+  }
+  h2{
+    font-size: 3.2rem;
+  }
+  h3{
+    font-size:2.2rem;
+  }
+}
 `;

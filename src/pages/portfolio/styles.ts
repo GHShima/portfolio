@@ -36,12 +36,5 @@ export const Container = styled.div`
   .carousel .control-dots .dot {
     background: #323232;
     z-index: 10;
-    &:hover {
-      transform: scale(1.5);
-    }
-  }
-  .carousel-slider:hover {
-    z-index: 8;
-    transform: scale(1.5);
   }
 `;
