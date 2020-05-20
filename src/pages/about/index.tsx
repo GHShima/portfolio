@@ -23,12 +23,12 @@ const About: React.FC = () => {
             <p>
               Comecei a trabalhar cedo. Dentre as diversas oportunidades que
               tive já fui garçom, entregador de panfletos, vendedor de presentes
-              japoneses, vendedor de vídeo games e auxiliar de escritório.
-              Estudei química industrial, mas não me adaptei, foi aí que cursei
-              Design de Games, onde eu pude ter o primeiro contato com a
-              programação e onde meus olhos brilharam. Em 2018 tive a chance de
-              trabalhar com desenvolvimento web e descobri o que realmente
-              queria fazer e desde então este é o meu foco.
+              japoneses, vendedor de vídeo games, auxiliar de escritório e
+              professor. Estudei química industrial, mas não me adaptei, foi aí
+              que cursei Design de Games, onde eu pude ter o primeiro contato
+              com a programação e onde meus olhos brilharam. Em 2018 tive a
+              chance de trabalhar com desenvolvimento web e descobri o que
+              realmente queria fazer e desde então este é o meu foco.
             </p>
             <p>
               Busco entregar o melhor trabalho possível, por isso estou sempre
