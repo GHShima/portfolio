@@ -75,7 +75,7 @@ const Contact: React.FC = () => {
                 name="_redirect"
                 type="hidden"
                 id="name"
-                value="https://www.guilhermeshima.com/contact"
+                value="https://www.guilhermeshima.com"
               />
 
               <input
