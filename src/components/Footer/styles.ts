@@ -23,4 +23,10 @@ export const Container = styled.div<ContainerProps>`
   svg {
     color: #f0f2f5;
   }
+  @media screen and (min-width: 320px) {
+    position: ${({ size }) => (size === 'small' ? 'initial ' : 'initial')};
+  }
+  @media screen and (min-width: 1024px) {
+    position: ${({ size }) => (size === 'small' ? 'fixed ' : 'initial')};
+  }
 `;

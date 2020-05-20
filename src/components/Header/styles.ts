@@ -88,12 +88,28 @@ export const Container = styled.div<ContainerProps>`
     .button-side-nav {
       display: initial;
     }
-  }
-  @media screen and (min-width: 375px) {
-  }
-  @media screen and (min-width: 425px) {
+    header {
+      div {
+        h1 {
+          font-size: 1.6rem;
+        }
+        p {
+          font-size: 1.2rem;
+        }
+      }
+    }
   }
   @media screen and (min-width: 768px) {
+    header {
+      div {
+        h1 {
+          font-size: 2rem;
+        }
+        p {
+          font-size: 1.5rem;
+        }
+      }
+    }
   }
   @media screen and (min-width: 1024px) {
     .top-nav {
@@ -102,9 +118,5 @@ export const Container = styled.div<ContainerProps>`
     .button-side-nav {
       display: none;
     }
-  }
-  @media screen and (min-width: 1440px) {
-  }
-  @media screen and (min-width: 2560px) {
   }
 `;

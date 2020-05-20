@@ -18,8 +18,8 @@ export const Container = styled.div`
     display: none;
   }
   img {
-    max-width: 300px;
-    max-height: 300px;
+    width: 300px;
+    height: 300px;
     border-radius: 50%;
   }
   hr {
@@ -58,8 +58,6 @@ export const Container = styled.div`
         font-size: 2rem;
       }
       img {
-        max-height: 500px;
-        max-width: 500px;
         width: 500px;
         height: 500px;
       }

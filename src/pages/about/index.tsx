@@ -2,6 +2,7 @@ import React from 'react';
 import { Container } from './styles';
 import Footer from '../../components/Footer';
 import Skills from '../../components/Skills';
+import ProfilePic from '../../assets/profile3.jpg';
 
 const About: React.FC = () => {
   return (
@@ -45,11 +46,7 @@ const About: React.FC = () => {
             </p>
           </div>
 
-          <img
-            className="profile-bottom"
-            src="https://avatars1.githubusercontent.com/u/62029842?s=460&u=acc479676a87759a930f553afd4ad34f05029d67&v=4"
-            alt="profile"
-          />
+          <img className="profile-bottom" src={ProfilePic} alt="profile" />
         </div>
         <hr />
       </Container>
