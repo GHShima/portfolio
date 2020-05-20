@@ -22,6 +22,10 @@ export const Container = styled.div`
     max-height: 300px;
     border-radius: 50%;
   }
+  hr {
+    width: 70%;
+    margin: 0 auto;
+  }
   @media screen and (min-width: 320px) {
     .content {
       display: block;
@@ -34,12 +38,6 @@ export const Container = styled.div`
     .profile-bottom {
       display: none;
     }
-  }
-  @media screen and (min-width: 375px) {
-  }
-  @media screen and (min-width: 425px) {
-  }
-  @media screen and (min-width: 768px) {
   }
   @media screen and (min-width: 1024px) {
     .content {

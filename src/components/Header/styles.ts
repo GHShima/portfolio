@@ -65,6 +65,7 @@ export const Container = styled.div<ContainerProps>`
     .side-nav a {
       padding: 8px 8px 8px 32px;
       text-decoration: none;
+      margin: 0;
       font-size: 2rem;
       display: block;
       transition: 0.3s;

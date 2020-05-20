@@ -3,17 +3,14 @@ import { CircularProgressbar } from 'react-circular-progressbar';
 import VisibilitySensor from 'react-visibility-sensor';
 import 'react-circular-progressbar/dist/styles.css';
 import { Container } from './styles';
-import Footer from '../../components/Footer';
 
 const Skills: React.FC = () => {
   let value = 0;
   return (
     <>
       <Container>
-        <div className="header">
-          <h2>Habilidades</h2>
-          <h3>Algumas das minhas habilidades</h3>
-        </div>
+        <h3>Algumas das minhas habilidades</h3>
+
         <div className="content">
           <div>
             <section>
@@ -140,7 +137,6 @@ const Skills: React.FC = () => {
           </div>
         </div>
       </Container>
-      <Footer size="small" />
     </>
   );
 };

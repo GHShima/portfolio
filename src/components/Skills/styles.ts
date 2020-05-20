@@ -8,10 +8,11 @@ export const Container = styled.div`
       display: flex;
       justify-content: center;
       section {
-        max-width: 200px;
+        max-width: 150px;
+        margin: 0 auto;
         .CircularProgressbar {
           width: 150px;
-          margin: 20px 20px;
+          margin: 10px auto;
         }
       }
     }
@@ -27,5 +28,21 @@ export const Container = styled.div`
   }
   p {
     text-align: center;
+  }
+  @media screen and (min-width: 320px) {
+    .content {
+      div {
+        display: block;
+        margin: 0 auto;
+      }
+    }
+  }
+
+  @media screen and (min-width: 768px) {
+    .content {
+      div {
+        display: flex;
+      }
+    }
   }
 `;

@@ -8,17 +8,17 @@ interface HeaderProps {
 }
 
 const Header: React.FC<HeaderProps> = ({ size = 'large' }: HeaderProps) => {
-  const sideNavbar = window.document.getElementById('sideNav');
-  console.log(sideNavbar);
   function openNav(): void {
+    const sideNavbar = window.document.getElementById('sideNav');
     if (sideNavbar === null) {
       console.log('is null');
     } else {
-      sideNavbar.style.width = '250px';
+      sideNavbar.style.width = '300px';
     }
   }
 
   function closeNav(): void {
+    const sideNavbar = window.document.getElementById('sideNav');
     if (sideNavbar === null) {
       console.log('is null');
     } else {
@@ -37,7 +37,6 @@ const Header: React.FC<HeaderProps> = ({ size = 'large' }: HeaderProps) => {
           <nav className="top-nav">
             <Link to="/">Sobre</Link>
             <Link to="/portfolio">Trabalhos</Link>
-            <Link to="/skills">Habilidades</Link>
             <Link to="/contact">Contato</Link>
           </nav>
           <button type="button" onClick={openNav} className="button-side-nav">
@@ -45,11 +44,10 @@ const Header: React.FC<HeaderProps> = ({ size = 'large' }: HeaderProps) => {
           </button>
           <nav id="sideNav" className="side-nav">
             <button type="button" className="close-btn" onClick={closeNav}>
-              X
+              x
             </button>
             <Link to="/">Sobre</Link>
             <Link to="/portfolio">Trabalhos</Link>
-            <Link to="/skills">Habilidades</Link>
             <Link to="/contact">Contato</Link>
           </nav>
         </header>

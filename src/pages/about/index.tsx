@@ -1,6 +1,7 @@
 import React from 'react';
 import { Container } from './styles';
 import Footer from '../../components/Footer';
+import Skills from '../../components/Skills';
 
 const About: React.FC = () => {
   return (
@@ -50,8 +51,11 @@ const About: React.FC = () => {
             alt="profile"
           />
         </div>
+        <hr />
       </Container>
-      <Footer size="small" />
+
+      <Skills />
+      <Footer size="large" />
     </>
   );
 };
