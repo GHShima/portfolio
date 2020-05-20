@@ -13,11 +13,7 @@ const About: React.FC = () => {
           <h3>Um pouco da minha trajetória</h3>
         </div>
         <div className="content">
-          <img
-            className="profile-top"
-            src="https://avatars1.githubusercontent.com/u/62029842?s=460&u=acc479676a87759a930f553afd4ad34f05029d67&v=4"
-            alt="profile"
-          />
+          <img className="profile-top" src={ProfilePic} alt="profile" />
           <div>
             <p>
               Olá, meu nome é Guilherme Shimabukuro, mas alguns me chamam de
@@ -30,7 +26,7 @@ const About: React.FC = () => {
               japoneses, vendedor de vídeo games e auxiliar de escritório.
               Estudei química industrial, mas não me adaptei, foi aí que cursei
               Design de Games, onde eu pude ter o primeiro contato com a
-              programação, onde meus olhos brilharam, em 2018 tive a chance de
+              programação e onde meus olhos brilharam. Em 2018 tive a chance de
               trabalhar com desenvolvimento web e descobri o que realmente
               queria fazer e desde então este é o meu foco.
             </p>
