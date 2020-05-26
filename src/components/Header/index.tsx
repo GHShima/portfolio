@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useCallback } from 'react';
 import { Link } from 'react-router-dom';
 import { FiAlignJustify } from 'react-icons/fi';
 import { Container } from './styles';
@@ -9,6 +9,13 @@ interface HeaderProps {
 
 const Header: React.FC<HeaderProps> = ({ size = 'large' }: HeaderProps) => {
   const [isMobile, setIsMobile] = useState(false);
+
+  const handleSideNavOpen = useCallback(() => {
+    setIsMobile(true);
+  }, []);
+  const handleSideNavClose = useCallback(() => {
+    setIsMobile(false);
+  }, []);
 
   return (
     <>
@@ -25,7 +32,7 @@ const Header: React.FC<HeaderProps> = ({ size = 'large' }: HeaderProps) => {
           </nav>
           <button
             type="button"
-            onClick={() => setIsMobile(true)}
+            onClick={handleSideNavOpen}
             className="button-side-nav"
           >
             <FiAlignJustify size="30px" />
@@ -34,7 +41,7 @@ const Header: React.FC<HeaderProps> = ({ size = 'large' }: HeaderProps) => {
             <button
               type="button"
               className="close-btn"
-              onClick={() => setIsMobile(false)}
+              onClick={handleSideNavClose}
             >
               x
             </button>
