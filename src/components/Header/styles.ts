@@ -2,6 +2,7 @@ import styled from 'styled-components';
 
 interface ContainerProps {
   size?: 'small' | 'large';
+  isMobile: boolean;
 }
 
 export const Container = styled.div<ContainerProps>`
@@ -51,7 +52,7 @@ export const Container = styled.div<ContainerProps>`
       color: #f0f2f5;
     }
     .side-nav {
-      width: 0;
+      width: ${({ isMobile }) => (isMobile === true ? '300px' : '0')};
       height: 100%;
       position: fixed;
       z-index: 1;
