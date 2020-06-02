@@ -1,40 +1,53 @@
-import React from 'react';
+import React, { useRef, useCallback } from 'react';
 import { FiLinkedin, FiGithub, FiFacebook } from 'react-icons/fi';
+import { Form } from '@unform/web';
+import { FormHandles } from '@unform/core';
+import * as Yup from 'yup';
+import axios from 'axios';
+
+import getValidationErrors from '../../utils/getValidationErrors';
+
 import { Container } from './styles';
 import Footer from '../../components/Footer';
-
-interface FormValidation {
-  name: string;
-  email: string;
-  subject: string;
-  message: string;
-}
+import Input from '../../components/Input';
 
 const Contact: React.FC = () => {
-  /* function validateForm(formParams: FormValidation) {
-    const errors = [];
+  const formRef = useRef<FormHandles>(null);
 
-    if (formParams.name.length === 0) {
-      errors.push('O campo nome precisa ser preenchido');
-    }
-    if (formParams.email.length < 5) {
-      errors.push('O e-mail deveria ter mais de 5 caracteres');
-    }
-    if (formParams.email.split('').filter(x => x === '@').length !== 1) {
-      errors.push('O e-mail deveria ter um @');
-    }
-    if (formParams.email.indexOf('.') === -1) {
-      errors.push('O e-mail deveria ter pelo menos um ponto');
-    }
-    if (formParams.subject.length === 0) {
-      errors.push('O campo assunto precisa ser preenchido');
-    }
-    if (formParams.message.length === 0) {
-      errors.push('O campo mensagem precisa ser preenchido');
-    }
-    return errors;
-  } */
+  const handleSubmit = useCallback(async (data: object) => {
+    try {
+      formRef.current?.setErrors({});
 
+      const schema = Yup.object().shape({
+        name: Yup.string().required('Nome é obrigatório'),
+        email: Yup.string()
+          .required('E-mail é obrigatório')
+          .email('Digite um e-mail válido'),
+        subject: Yup.string().required('Assunto é obrigatório'),
+        message: Yup.string().required('Mensagem é obrigatório'),
+      });
+
+      await schema.validate(data, {
+        abortEarly: false,
+      });
+
+      const api = axios.create({
+        baseURL: 'https://formsubmit.io',
+      });
+
+      const response = await api.post(
+        '/send/d5a5551f-5a39-4f57-9d72-bc54a453bbd4',
+        {
+          ...data,
+          _redirect: 'https://www.guilhermeshima.com',
+        },
+      );
+    } catch (err) {
+      const errors = getValidationErrors(err);
+
+      formRef.current?.setErrors(errors);
+    }
+  }, []);
   return (
     <>
       <Container>
@@ -65,37 +78,17 @@ const Contact: React.FC = () => {
             </div>
           </div>
           <div className="form">
-            <form
-              id="contactform"
-              action="https://formsubmit.io/send/d5a5551f-5a39-4f57-9d72-bc54a453bbd4
-"
-              method="POST"
-            >
-              <input
-                name="_redirect"
-                type="hidden"
-                id="name"
-                value="https://www.guilhermeshima.com"
-              />
+            <Form onSubmit={handleSubmit} ref={formRef} id="contactform">
+              <Input id="name" type="text" name="name" placeholder="Nome" />
 
-              <input
-                id="name"
-                type="text"
-                name="name"
-                placeholder="Nome"
-                required
-              />
-
-              <input
-                required
+              <Input
                 id="email"
                 type="email"
                 name="email"
                 placeholder="E-mail"
               />
 
-              <input
-                required
+              <Input
                 id="subject"
                 type="text"
                 name="subject"
@@ -103,7 +96,6 @@ const Contact: React.FC = () => {
               />
 
               <textarea
-                required
                 id="message"
                 name="message"
                 cols={65}
@@ -112,7 +104,7 @@ const Contact: React.FC = () => {
               />
 
               <button type="submit">Enviar</button>
-            </form>
+            </Form>
           </div>
         </div>
       </Container>
