@@ -76,7 +76,13 @@ const Contact: React.FC = () => {
             </div>
           </div>
           <div className="form">
-            <Form onSubmit={handleSubmit} ref={formRef} id="contactform">
+            <Form
+              action="https://formsubmit.io/send/d5a5551f-5a39-4f57-9d72-bc54a453bbd4"
+              onSubmit={handleSubmit}
+              ref={formRef}
+              id="contactform"
+              method="POST"
+            >
               <Input id="name" type="text" name="name" placeholder="Nome" />
 
               <Input
