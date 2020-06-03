@@ -100,6 +100,11 @@ const Contact: React.FC = () => {
                 rows={7}
                 placeholder="Mensagem"
               /> */}
+              <input
+                name="_formsubmit_id"
+                type="text"
+                style={{ display: 'none' }}
+              />
 
               <button type="submit">Enviar</button>
             </Form>
