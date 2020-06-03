@@ -24,24 +24,22 @@ const Contact: React.FC = () => {
           .required('E-mail é obrigatório')
           .email('Digite um e-mail válido'),
         subject: Yup.string().required('Assunto é obrigatório'),
-        message: Yup.string().required('Mensagem é obrigatório'),
+        // message: Yup.string().required('Mensagem é obrigatório'),
       });
 
       await schema.validate(data, {
         abortEarly: false,
       });
+      console.log('entrou');
 
       const api = axios.create({
         baseURL: 'https://formsubmit.io',
       });
 
-      const response = await api.post(
-        '/send/d5a5551f-5a39-4f57-9d72-bc54a453bbd4',
-        {
-          ...data,
-          _redirect: 'https://www.guilhermeshima.com',
-        },
-      );
+      await api.post('/send/d5a5551f-5a39-4f57-9d72-bc54a453bbd4', {
+        ...data,
+        _redirect: 'https://www.guilhermeshima.com',
+      });
     } catch (err) {
       const errors = getValidationErrors(err);
 
