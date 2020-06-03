@@ -31,15 +31,6 @@ const Contact: React.FC = () => {
         abortEarly: false,
       });
       console.log('entrou');
-
-      const api = axios.create({
-        baseURL: 'https://formsubmit.io',
-      });
-
-      await api.post('/send/d5a5551f-5a39-4f57-9d72-bc54a453bbd4', {
-        ...data,
-        _redirect: 'https://www.guilhermeshima.com',
-      });
     } catch (err) {
       const errors = getValidationErrors(err);
 
