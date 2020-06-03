@@ -1,18 +1,18 @@
 import React, { useRef, useCallback } from 'react';
 import { FiLinkedin, FiGithub, FiFacebook } from 'react-icons/fi';
-import { Form } from '@unform/web';
-import { FormHandles } from '@unform/core';
-import * as Yup from 'yup';
-import axios from 'axios';
+// import { Form } from '@unform/web';
+// import { FormHandles } from '@unform/core';
+// import * as Yup from 'yup';
+// import axios from 'axios';
 
-import getValidationErrors from '../../utils/getValidationErrors';
+// import getValidationErrors from '../../utils/getValidationErrors';
 
 import { Container } from './styles';
 import Footer from '../../components/Footer';
-import Input from '../../components/Input';
+// import Input from '../../components/Input';
 
 const Contact: React.FC = () => {
-  const formRef = useRef<FormHandles>(null);
+  /* const formRef = useRef<FormHandles>(null);
 
   const handleSubmit = useCallback(async (data: object) => {
     try {
@@ -36,7 +36,7 @@ const Contact: React.FC = () => {
 
       formRef.current?.setErrors(errors);
     }
-  }, []);
+  }, []); */
   return (
     <>
       <Container>
@@ -67,36 +67,35 @@ const Contact: React.FC = () => {
             </div>
           </div>
           <div className="form">
-            <Form
+            <form
               action="https://formsubmit.io/send/d5a5551f-5a39-4f57-9d72-bc54a453bbd4"
-              onSubmit={handleSubmit}
-              ref={formRef}
               id="contactform"
               method="POST"
             >
-              <Input id="name" type="text" name="name" placeholder="Nome" />
+              <input id="name" type="text" name="name" placeholder="Nome" />
 
-              <Input
+              <input
                 id="email"
                 type="email"
                 name="email"
                 placeholder="E-mail"
               />
 
-              <Input
+              <input
                 id="subject"
                 type="text"
                 name="subject"
                 placeholder="Assunto"
               />
 
-              {/* <textarea
+              <textarea
+                required
                 id="message"
                 name="message"
                 cols={65}
                 rows={7}
                 placeholder="Mensagem"
-              /> */}
+              />
               <input
                 name="_formsubmit_id"
                 type="text"
@@ -104,7 +103,7 @@ const Contact: React.FC = () => {
               />
 
               <button type="submit">Enviar</button>
-            </Form>
+            </form>
           </div>
         </div>
       </Container>
