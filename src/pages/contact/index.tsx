@@ -93,13 +93,13 @@ const Contact: React.FC = () => {
                 placeholder="Assunto"
               />
 
-              <textarea
+              {/* <textarea
                 id="message"
                 name="message"
                 cols={65}
                 rows={7}
                 placeholder="Mensagem"
-              />
+              /> */}
 
               <button type="submit">Enviar</button>
             </Form>
